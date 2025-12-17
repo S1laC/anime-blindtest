@@ -3,177 +3,168 @@
 // and the 'answer' with your actual anime data.
 const animeData = [
     { 
-        image: "https://via.placeholder.com/600x300/e74c3c/ffffff?text=Scene+1", 
-        answer: "Attack on Titan" 
+        id: 1, 
+        image: [], 
+        answer: "Attack on Titan" ,
+        status: "pending"
     },
     { 
-        image: "https://via.placeholder.com/600x300/3498db/ffffff?text=Scene+2", 
-        answer: "Death Note" 
+        id: 2, 
+        image: [], 
+        answer: "Death Note" , 
+        status: "pending"
     },
     { 
-        image: "https://via.placeholder.com/600x300/2ecc71/ffffff?text=Scene+3", 
-        answer: "One Piece" 
+        id: 3, 
+        image: [], 
+        answer: "One Piece" , 
+        status: "pending"
     },
     { 
-        image: "https://via.placeholder.com/600x300/9b59b6/ffffff?text=Scene+4", 
-        answer: "Fullmetal Alchemist" 
+        id: 4, 
+        image: [], 
+        answer: "Fullmetal Alchemist" ,
+        status: "pending"
     },
     { 
-        image: "https://via.placeholder.com/600x300/f39c12/ffffff?text=Scene+5", 
-        answer: "Naruto" 
+        id: 5, 
+        image: [], 
+        answer: "Naruto" , 
+        status: "pending"
     },
-    // Add more anime here...
+
 ];
 
 // --- Game State Variables ---
 let currentScore = 0;
-let triesLeft = 10;
-let currentIndex = 0; // To keep track of the current image being shown
-let shuffledData = [];
+let currentImageIndex = 0;
+let currentAnimeIndex = 0; 
+
 
 // --- DOM Elements ---
 const animeImage = document.getElementById('anime-image');
 const answerInput = document.getElementById('answer-input');
 const submitButton = document.getElementById('submit-button');
 const messageElement = document.getElementById('message');
-const currentScoreElement = document.getElementById('current-score');
 const triesLeftElement = document.getElementById('tries-left');
 const gameArea = document.getElementById('game-area');
 const resultsArea = document.getElementById('results-area');
-const finalScoreElement = document.getElementById('final-score');
-const restartButton = document.getElementById('restart-button');
 
-
-// --- Utility Functions ---
-
-// Function to shuffle the array
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
+// Initialize the Navigation Grid
+function createGrid() {
+    navGrid.innerHTML = '';
+    animeData.forEach((anime, index) => {
+        const btn = document.createElement('button');
+        btn.textContent = anime.id;
+        btn.className = `nav-btn ${anime.status}`;
+        btn.onclick = () => jumpToAnime(index);
+        navGrid.appendChild(btn);
+    });
 }
-
-// Function to normalize the answer for flexible matching
-function normalizeAnswer(text) {
-    return text.trim().toLowerCase().replace(/[^a-z0-9]/g, ''); // Remove spaces and non-alphanumeric chars
-}
-
-
-// --- Game Functions ---
 
 function startGame() {
+    currentAnimeIndex = 0;
+    currentImageIndex = 0;
     currentScore = 0;
-    triesLeft = 10;
-    currentIndex = 0;
-    
-    // Create a shuffled copy of the data
-    shuffledData = [...animeData]; 
-    shuffleArray(shuffledData);
-
-    // Ensure we have at least 10 images, otherwise adjust triesLeft
-    if (shuffledData.length < 10) {
-        triesLeft = shuffledData.length;
-    }
-
-    updateUI();
-    loadNextImage();
-    
-    // Show game area, hide results area
-    gameArea.classList.remove('hidden');
-    resultsArea.classList.add('hidden');
-    answerInput.focus();
+    // Reset all statuses
+    animeData.forEach(a => a.status = "pending");
+    createGrid();
+    displayRound();
 }
 
-function loadNextImage() {
-    // Check if we ran out of images or tries
-    if (currentIndex >= shuffledData.length || triesLeft <= 0) {
+function jumpToAnime(index) {
+    currentAnimeIndex = index;
+    currentImageIndex = 0;
+    displayRound();
+}
+
+function displayRound() {
+    if (currentAnimeIndex >= animeData.length) {
         endGame();
         return;
     }
 
-    // Load the next image
-    const currentAnime = shuffledData[currentIndex];
-    animeImage.src = currentAnime.image;
-    answerInput.value = '';
+    const anime = animeData[currentAnimeIndex];
+    animeImage.src = anime.images[currentImageIndex];
     
-    // Hide previous message
+    // Update Dots
+    dots.forEach((dot, i) => {
+        dot.className = i < currentImageIndex ? 'dot filled' : 'dot';
+    });
+
     messageElement.classList.add('hidden');
-    messageElement.className = ''; // Reset classes
     submitButton.disabled = false;
+    skipButton.disabled = false;
+    answerInput.value = '';
     answerInput.focus();
+    createGrid(); // Refresh colors
 }
 
 function checkAnswer() {
-    // Prevent double submission
     if (submitButton.disabled) return;
+    const anime = animeData[currentAnimeIndex];
+    const userAnswer = answerInput.value.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const correctAnswer = anime.answer.toLowerCase().replace(/[^a-z0-9]/g, '');
 
-    const currentAnime = shuffledData[currentIndex];
-    const userAnswer = normalizeAnswer(answerInput.value);
-    const correctAnswer = normalizeAnswer(currentAnime.answer);
-    
-    let isCorrect = false;
-
-    // Check for exact match first, then allow partial matching if needed (e.g., "Fullmetal Alchemist Brotherhood" vs "Fullmetal Alchemist")
     if (userAnswer === correctAnswer) {
-        isCorrect = true;
+        handleSuccess(anime);
     } else {
-        // Simple check for if the correct answer contains the user's answer (optional)
-        // This makes the check more forgiving. You can remove this 'else' block for strict matching.
-        if (correctAnswer.includes(userAnswer) && userAnswer.length > 3) {
-             isCorrect = true;
-        }
+        handleWrong(anime);
     }
+}
 
-    triesLeft--;
+function handleSuccess(anime) {
+    currentScore++;
+    anime.status = "correct";
+    showMessage(`Correct! It was ${anime.answer}`, 'correct');
+    finishAnime();
+}
 
-    if (isCorrect) {
-        currentScore++;
-        showMessage('Correct! The anime is: ' + currentAnime.answer, 'correct');
+function handleWrong(anime) {
+    currentImageIndex++;
+    if (currentImageIndex < 5) {
+        showMessage("Wrong! Try the next image...", "incorrect");
+        setTimeout(displayRound, 1000);
     } else {
-        showMessage('Incorrect! The correct answer was: ' + currentAnime.answer, 'incorrect');
+        anime.status = "failed";
+        showMessage(`Out of tries! It was: ${anime.answer}`, "incorrect");
+        finishAnime();
     }
+}
 
-    updateUI();
-    submitButton.disabled = true; // Disable while message is displayed
-
-    // Move to the next image after a delay
+function finishAnime() {
+    submitButton.disabled = true;
+    skipButton.disabled = true;
     setTimeout(() => {
-        currentIndex++;
-        loadNextImage();
-    }, 2000); // 2 seconds delay to read the result
+        currentAnimeIndex++;
+        currentImageIndex = 0;
+        displayRound();
+    }, 2000);
+}
+
+function skipAnime() {
+    const anime = animeData[currentAnimeIndex];
+    anime.status = "failed";
+    showMessage(`Skipped! The answer was: ${anime.answer}`, "incorrect");
+    finishAnime();
 }
 
 function showMessage(text, type) {
     messageElement.textContent = text;
+    messageElement.className = type;
     messageElement.classList.remove('hidden');
-    messageElement.classList.add(type);
-}
-
-function updateUI() {
-    currentScoreElement.textContent = `Score: ${currentScore}`;
-    triesLeftElement.textContent = `Tries Left: ${triesLeft}`;
 }
 
 function endGame() {
-    gameArea.classList.add('hidden');
-    resultsArea.classList.remove('hidden');
-    finalScoreElement.textContent = `Your final score is ${currentScore} out of ${10 - triesLeft} tries!`;
+    document.getElementById('game-area').classList.add('hidden');
+    document.getElementById('results-area').classList.remove('hidden');
+    document.getElementById('final-score').textContent = `Final Score: ${currentScore} / ${animeData.length}`;
 }
 
-
-// --- Event Listeners ---
-
+// Listeners
 submitButton.addEventListener('click', checkAnswer);
+skipButton.addEventListener('click', skipAnime);
+answerInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') checkAnswer(); });
+document.getElementById('restart-button').addEventListener('click', () => location.reload());
 
-// Allow pressing Enter key to submit
-answerInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        checkAnswer();
-    }
-});
-
-restartButton.addEventListener('click', startGame);
-
-// --- Initialization ---
 startGame();
