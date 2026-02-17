@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/anime-guessr/public/index.html">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/anime-guessr/public/index.html" />
+              <option name="updatedContent" value="&lt;!DOCTYPE html&gt;&#10;&lt;html lang=&quot;en&quot;&gt;&#10;&lt;head&gt;&#10;    &lt;meta charset=&quot;UTF-8&quot;&gt;&#10;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;&#10;    &lt;title&gt;Anime Blind Test&lt;/title&gt;&#10;&lt;/head&gt;&#10;&lt;body&gt;&#10;    &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;&#10;    &lt;script type=&quot;module&quot; src=&quot;/src/main.js&quot;&gt;&lt;/script&gt;&#10;&lt;/body&gt;&#10;&lt;/html&gt;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/backend/routers/webhooks.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/backend/routers/webhooks.py" />
+              <option name="originalContent" value="&#10;" />
+              <option name="updatedContent" value="from fastapi import APIRouter&#10;&#10;router = APIRouter(prefix=&quot;/api&quot;, tags=[&quot;api&quot;])&#10;&#10;@router.get(&quot;/health&quot;)&#10;def health_check():&#10;    return {&quot;status&quot;: &quot;ok&quot;, &quot;message&quot;: &quot;API is running&quot;}&#10;&#10;@router.get(&quot;/anime&quot;)&#10;def get_anime():&#10;    return {&quot;anime&quot;: []}&#10;&#10;@router.post(&quot;/anime/guess&quot;)&#10;def submit_guess(guess: dict):&#10;    return {&quot;result&quot;: &quot;checking guess&quot;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

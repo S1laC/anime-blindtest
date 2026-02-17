@@ -1,0 +1,3 @@
+com\example\backend\HelloResource.class
+com\example\backend\HelloApplication.class
+com\example\backend\CORSFilter.class
