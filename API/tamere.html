@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Recherche Jikan</title>
+    <style>
+        /* Un style minimaliste et "moche" pour se concentrer sur le code */
+        body { font-family: sans-serif; background: #222; color: white; padding: 20px; }
+        #search { width: 300px; padding: 10px; font-size: 16px; }
+        #results { margin-top: 10px; list-style: none; padding: 0; width: 320px; }
+        .anime-item { 
+            background: #444; 
+            margin-bottom: 5px; 
+            padding: 8px; 
+            cursor: pointer; 
+            border: 1px solid #666;
+        }
+        .anime-item:hover { background: #555; border-color: #00ff00; }
+        #loading { display: none; color: orange; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Testeur de titres Anime (API Jikan)</h1>
+    <p>Tape au moins 3 lettres pour voir les suggestions :</p>
+
+    <input type="text" id="search" placeholder="Tape le nom d'un anime..." autocomplete="off">
+    <div id="loading">Recherche en cours...</div>
+    
+    <ul id="results"></ul>
+
+    <hr>
+    <p>Log de sélection : <span id="selection" style="color: #00ff00;">Aucun</span></p>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const resultsList = document.getElementById('results');
+        const loadingText = document.getElementById('loading');
+        const selectionText = document.getElementById('selection');
+
+        let debounceTimer;
+
+        async function searchAnime(query) {
+            // On ne cherche que si l'input n'est pas VIDE
+            if (query.length === 0) {
+                resultsList.innerHTML = "";
+                return;
+            }
+
+            loadingText.style.display = "block";
+
+            try {
+                // J'ai gardé la limite à 5 pour que ça reste super rapide à charger
+                const url = `https://api.jikan.moe/v4/anime?q=${encodeURIComponent(query)}&limit=5`;
+                const response = await fetch(url);
+                const json = await response.json();
+                
+                resultsList.innerHTML = "";
+
+                if (json.data) {
+                    json.data.forEach(anime => {
+                        const li = document.createElement('li');
+                        li.className = "anime-item";
+                        const title = anime.title_english || anime.title;
+                        li.textContent = title;
+                        
+                        li.onclick = () => {
+                            selectionText.textContent = title;
+                            searchInput.value = title;
+                            resultsList.innerHTML = "";
+                        };
+                        resultsList.appendChild(li);
+                    });
+                }
+
+            } catch (error) {
+                console.error("Erreur API :", error);
+            } finally {
+                loadingText.style.display = "none";
+            }
+        }
+
+        searchInput.addEventListener('input', () => {
+            clearTimeout(debounceTimer);
+            const query = searchInput.value.trim();
+            
+            // On attend seulement 300ms (très rapide) pour lancer la recherche
+            debounceTimer = setTimeout(() => {
+                searchAnime(query);
+            }, 300); 
+        });
+    </script>
+</body>
+</html>
