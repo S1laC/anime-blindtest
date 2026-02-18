@@ -84,10 +84,10 @@
             clearTimeout(debounceTimer);
             const query = searchInput.value.trim();
             
-            // On attend seulement 300ms (très rapide) pour lancer la recherche
+            // On attend seulement 100ms (très très rapide) pour lancer la recherche
             debounceTimer = setTimeout(() => {
                 searchAnime(query);
-            }, 300); 
+            }, 100); 
         });
     </script>
 </body>
