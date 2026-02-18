@@ -1,35 +1,137 @@
-@import './base.css';
+/* 1. CONFIGURATION GÉNÉRALE */
+:root {
+    --barbie-pink: #ff69b4;       /* Rose vif */
+    --deep-pink: #ff1493;         /* Bordures et détails */
+    --bubblegum: #fce4ec;         /* Fond de page */
+    --accent-white: #ffffff;
+}
+
+/* On réinitialise TOUT pour coller aux bords */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bubblegum);
+    font-family: 'Quicksand', sans-serif; /* Assure-toi d'avoir le lien Google Font */
+}
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
+/* 2. LE HEADER (Barre du haut fixe) */
+.barbie-navbar {
+    background-color: var(--barbie-pink);
+    width: 100%;
+    height: 70px;
     display: flex;
-    place-items: center;
-  }
+    align-items: center;
+    border-bottom: 4px solid var(--deep-pink);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: fixed; /* Reste en haut au scroll */
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.header-content {
+    width: 100%;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-section, .right-section {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.mini-logo {
+    height: 45px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: white;
+}
+
+/* Boutons icônes ronds et blancs */
+.pink-icon-btn {
+    background: white;
+    border: 2px solid var(--deep-pink);
+    border-radius: 50%;
+    color: var(--barbie-pink);
+    width: 42px;
+    height: 42px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pink-icon-btn:hover {
+    transform: scale(1.15) rotate(5deg);
+    background: #fff0f5;
+}
+
+/* 3. LE CONTENU PRINCIPAL */
+.page-content {
+    max-width: 900px; /* Largeur du cadre central */
+    margin: 110px auto 40px auto; /* 110px pour ne pas être caché sous le header */
+    padding: 20px;
+}
+
+/* La carte "Jeu Flash" */
+.barbie-card {
+    background: white;
+    border: 4px solid var(--barbie-pink);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 12px 12px 0px var(--barbie-pink); /* Ombre rétro plate */
+    text-align: center;
+}
+
+/* 4. TYPOGRAPHIE ET BOUTONS */
+h1, h2, h3 {
+    color: var(--barbie-pink);
+    text-shadow: 2px 2px 0px #fff;
+    text-transform: uppercase;
+}
+
+.btn-barbie {
+    background-color: var(--barbie-pink);
+    color: white;
+    border: 3px solid white;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 5px 0 var(--deep-pink);
+    transition: all 0.2s ease;
+}
+
+.btn-barbie:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 var(--deep-pink);
+}
+
+.btn-barbie:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 var(--deep-pink);
+}
+
+.response-box {
+    margin-top: 20px;
+    background: var(--bubblegum);
+    border: 2px dashed var(--barbie-pink);
+    border-radius: 15px;
+    padding: 15px;
+    color: var(--deep-pink);
 }

@@ -1,6 +1,4 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 import axios from 'axios'
 import { ref } from 'vue'
 
@@ -18,55 +16,31 @@ const fetchData = async () => {
 }
 </script>
 
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+<template>
+  <header class="barbie-navbar">
+    <div class="header-content">
+      <div class="left-section">
+        <img src="./assets/logo.jpg" alt="Logo" class="mini-logo" />
+        <button class="pink-icon-btn">📅</button>
+      </div>
+      <div class="right-section">
+        <button class="pink-icon-btn">?</button>
+        <button class="pink-icon-btn">...</button>
+      </div>
     </div>
   </header>
 
-  <main>
-    <TheWelcome />
-
-    <div style="margin-top: 2rem; padding: 1rem; background: #f0f0f0; border-radius: 8px;">
+  <main class="page-content">
+    <div class="barbie-card">
       <h2>Backend Connection Test</h2>
-      <button @click="fetchData" style="padding: 0.5rem 1rem; cursor: pointer;">
-        Call Backend API
+      <button @click="fetchData" class="btn-barbie">
+        💖 CALL BACKEND API 💖
       </button>
-      <p v-if="message" style="margin-top: 1rem;">
+
+      <div v-if="message" class="response-box">
         <strong>Response:</strong> {{ message }}
-      </p>
+      </div>
     </div>
   </main>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
