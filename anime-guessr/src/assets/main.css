@@ -8,11 +8,10 @@
 
 /* On réinitialise TOUT pour coller aux bords */
 body, html {
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     width: 100%;
     min-height: 100vh;
-    background-color: var(--bubblegum);
     font-family: 'Quicksand', sans-serif; /* Assure-toi d'avoir le lien Google Font */
 }
 

@@ -1,5 +1,6 @@
 <script setup>
 import axios from 'axios'
+import testBackend from './components/testBackend.vue'
 import { ref } from 'vue'
 
 const message = ref('')
@@ -32,15 +33,8 @@ const fetchData = async () => {
   </header>
 
   <main class="page-content">
-    <div class="barbie-card">
-      <h2>Backend Connection Test</h2>
-      <button @click="fetchData" class="btn-barbie">
-        💖 CALL BACKEND API 💖
-      </button>
-
-      <div v-if="message" class="response-box">
-        <strong>Response:</strong> {{ message }}
-      </div>
-    </div>
+    <testBackend />
   </main>
+
+
 </template>

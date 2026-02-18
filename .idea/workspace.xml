@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="116a64ac-fbcb-4237-b498-9e561c96cdbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/anime-guessr/src/assets/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/anime-guessr/src/components/testBackend.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/copilotDiffState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copilotDiffState.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anime-guessr/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/anime-guessr/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anime-guessr/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/anime-guessr/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/anime-guessr/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/anime-guessr/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anime-guessr/src/assets/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/anime-guessr/src/assets/logo.svg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/anime-guessr/src/assets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/anime-guessr/src/assets/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anime-guessr/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/anime-guessr/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/anime-guessr/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/anime-guessr/src/components/TheWelcome.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/anime-guessr/src/components/WelcomeItem.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/AnimeResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/example/backend/AnimeResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="Vue Composition API Component" />
       </list>
     </option>
   </component>
@@ -90,6 +87,11 @@
     "settings.editor.selected.configurable": "preferences.keymap",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Composition API Component"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -126,7 +128,7 @@
       <updated>1771319949347</updated>
       <workItem from="1771319956342" duration="16234000" />
       <workItem from="1771403929137" duration="62000" />
-      <workItem from="1771407417854" duration="3091000" />
+      <workItem from="1771407417854" duration="3490000" />
     </task>
     <servers />
   </component>
