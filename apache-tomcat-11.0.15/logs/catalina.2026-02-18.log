@@ -1,0 +1,59 @@
+18-Feb-2026 11:13:32.870 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+18-Feb-2026 11:13:33.028 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+18-Feb-2026 11:13:33.418 INFO [Thread-1] org.jboss.weld.environment.se.WeldContainer.shutdown WELD-ENV-002001: Weld SE container 8a228782-e65e-4979-9b2a-8adca89253d9 shut down
+18-Feb-2026 11:13:33.846 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+18-Feb-2026 11:13:33.928 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+18-Feb-2026 11:13:38.251 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.15
+18-Feb-2026 11:13:38.261 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 2 2025 16:32:48 UTC
+18-Feb-2026 11:13:38.264 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.15.0
+18-Feb-2026 11:13:38.266 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+18-Feb-2026 11:13:38.267 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+18-Feb-2026 11:13:38.268 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+18-Feb-2026 11:13:38.270 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\AdoptOpenJDK\jdk-24.0.2
+18-Feb-2026 11:13:38.271 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           24.0.2+12-54
+18-Feb-2026 11:13:38.272 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+18-Feb-2026 11:13:38.273 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15
+18-Feb-2026 11:13:38.274 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15
+18-Feb-2026 11:13:38.296 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\conf\logging.properties
+18-Feb-2026 11:13:38.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Feb-2026 11:13:38.297 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+18-Feb-2026 11:13:38.298 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+18-Feb-2026 11:13:38.299 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+18-Feb-2026 11:13:38.300 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+18-Feb-2026 11:13:38.301 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+18-Feb-2026 11:13:38.301 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+18-Feb-2026 11:13:38.302 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+18-Feb-2026 11:13:38.302 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+18-Feb-2026 11:13:38.302 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15
+18-Feb-2026 11:13:38.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15
+18-Feb-2026 11:13:38.303 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\temp
+18-Feb-2026 11:13:38.318 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\AdoptOpenJDK\jdk-24.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\WindowsApps\Microsoft.PowerShell_7.5.4.0_x64__8wekyb3d8bbwe;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\AdoptOpenJDK\jdk-24.0.2\bin;c:\Oracle\SQLcl\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\FPC\3.2.2\bin\i386-Win32;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\apache-maven-3.9.11\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Sila\AppData\Local\Programs\Python\Launcher\;C:\Users\Sila\scoop\apps\python\current\Scripts;C:\Users\Sila\scoop\apps\python\current;C:\Users\Sila\scoop\shims;C:\Program Files\AdoptOpenJDK\jdk-24.0.2\bin;C:\Users\Sila\AppData\Local\Microsoft\WindowsApps;c:\users\sila\.local\bin;c:\users\sila\appdata\roaming\python\python312\scripts;C:\Users\Sila\AppData\Local\Microsoft\WindowsApps;C:\Users\Sila\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Sila\AppData\Roaming\npm;C:\Users\Sila\AppData\Local\Microsoft\WinGet\Packages\SQLite.SQLite_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\Sila\AppData\Local\Microsoft\WinGet\Packages\Hashicorp.Terraform_Microsoft.Winget.Source_8wekyb3d8bbwe;;.]
+18-Feb-2026 11:13:38.908 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+18-Feb-2026 11:13:38.967 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [1125] milliseconds
+18-Feb-2026 11:13:39.122 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Feb-2026 11:13:39.123 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.15]
+18-Feb-2026 11:13:39.146 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\docs]
+18-Feb-2026 11:13:39.894 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\docs] has finished in [742] ms
+18-Feb-2026 11:13:39.895 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\examples]
+18-Feb-2026 11:13:40.811 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\examples] has finished in [915] ms
+18-Feb-2026 11:13:40.812 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\host-manager]
+18-Feb-2026 11:13:40.924 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\host-manager] has finished in [113] ms
+18-Feb-2026 11:13:40.925 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\manager]
+18-Feb-2026 11:13:41.008 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\manager] has finished in [82] ms
+18-Feb-2026 11:13:41.009 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\ROOT]
+18-Feb-2026 11:13:54.547 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Feb-2026 11:13:56.280 WARNING [main] org.glassfish.jersey.server.wadl.WadlFeature.configure JAXBContext implementation could not be found. WADL feature is disabled.
+18-Feb-2026 11:13:57.579 INFO [main] org.jboss.weld.bootstrap.WeldStartup.<clinit> WELD-000900: 6.0.3 (Final)
+18-Feb-2026 11:13:58.385 INFO [main] org.jboss.weld.environment.deployment.discovery.ReflectionDiscoveryStrategy.processAnnotatedDiscovery WELD-ENV-000014: Falling back to Java Reflection for bean-discovery-mode="annotated" discovery. Add io.smallrye:jandex to the classpath to speed-up startup.
+18-Feb-2026 11:13:59.057 INFO [main] org.jboss.weld.bootstrap.WeldStartup.startContainer WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+18-Feb-2026 11:14:02.159 INFO [main] org.jboss.weld.environment.se.WeldContainer.fireContainerInitializedEvent WELD-ENV-002003: Weld SE container 417cdf20-0e33-4d6d-9e77-c864a027bcd4 initialized
+18-Feb-2026 11:14:02.841 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\ROOT] has finished in [21,833] ms
+18-Feb-2026 11:14:02.842 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\ROOT blabla]
+18-Feb-2026 11:14:02.947 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\Sila\OneDrive - HE-ARC\Bureau\apache-tomcat-11.0.15\webapps\ROOT blabla] has finished in [105] ms
+18-Feb-2026 11:14:02.957 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+18-Feb-2026 11:14:03.010 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [24038] milliseconds
+18-Feb-2026 11:17:04.266 INFO [Thread-2] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+18-Feb-2026 11:17:04.284 INFO [Thread-2] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+18-Feb-2026 11:17:04.317 INFO [Thread-1] org.jboss.weld.environment.se.WeldContainer.shutdown WELD-ENV-002001: Weld SE container 417cdf20-0e33-4d6d-9e77-c864a027bcd4 shut down
+18-Feb-2026 11:17:04.335 INFO [Thread-2] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+18-Feb-2026 11:17:04.341 INFO [Thread-2] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]

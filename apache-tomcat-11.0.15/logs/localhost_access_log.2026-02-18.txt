@@ -1,0 +1,4 @@
+157.26.104.118 - - [18/Feb/2026:07:45:50 +0100] "GET /DevMgmt/ProductConfigDyn.xml HTTP/1.1" 404 784
+157.26.104.118 - - [18/Feb/2026:07:45:50 +0100] "GET /DevMgmt/DiscoveryTree.xml HTTP/1.1" 404 781
+127.0.0.1 - - [18/Feb/2026:11:14:03 +0100] "GET / HTTP/1.1" 404 752
+127.0.0.1 - - [18/Feb/2026:11:15:23 +0100] "GET /api/hello-world HTTP/1.1" 200 13
